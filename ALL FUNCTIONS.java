@@ -26,7 +26,7 @@ class Stacks1 {
         System.out.println("Your Stack is: ");
 
         if (top == -1) {
-            System.out.println("Stack is Empty ");
+            System.out.println(" Empty ");
         } else {
 
             for (int i = top; i >= 0; i--) {
@@ -57,7 +57,7 @@ class Stacks1 {
     }
 
     void change(int po, int val) {
-        if (top - po + 1 <= -1) {
+        if (top - po + 1 <0) {
             System.out.println("Stack Underflow on Change ");
         } else if (top - po + 1 > top) {
             System.out.println("Element does not exist ");
