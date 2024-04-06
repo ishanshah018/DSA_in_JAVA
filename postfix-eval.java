@@ -11,7 +11,7 @@ class post {
         capacity = size;
         top = -1;
         sa = new int[capacity];
-        ;
+        
     }
 
     void push(int a) {
