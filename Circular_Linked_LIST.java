@@ -30,7 +30,8 @@ class CLL {
     void insertatlast(int data) {
         node n = new node(data);
         if (first == null) {
-            insertatfirst(data);
+            first = n;
+            n.next = first;
         } else {
             node c = first;
             while (c.next != first) {
