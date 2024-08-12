@@ -18,22 +18,25 @@ class BST {
     }
 
     void insert(int data) {
-        root = insertRec(root, data);
-    }
-
-    Node insertRec(Node r, int d) {
-        if (r == null) {
-            r = new Node(d);
-            return r;
+        if (root == null) {
+            root = new Node(data);
+            return;
         }
-        if (d < r.value) {
-            r.left = insertRec(r.left, d);
-            return r;
+        Node parent = null, current = root;
+        while (current != null) {
+            parent = current;
+            if (data < current.value) {
+                current = current.left;
+            } else {
+                current = current.right;
+            }
+        }
+        if (data < parent.value) {
+            parent.left = new Node(data);
         } else {
-            r.right = insertRec(r.right, d);
-            return r;
+            parent.right = new Node(data);
         }
-    } // end of insertRec
+    }
 
     void inorder() {
         inorderRec(root);
@@ -110,6 +113,24 @@ class BST {
         return r;
     }
 
+    void search(Node n, int data) {
+        if (n == null) {
+            System.out.println("Tree Is Empty..");
+            return;
+        }
+        while (n != null) {
+            if (n.value == data) {
+                System.out.println("Element Found: " + data);
+                return;
+            } else if (data < n.value) {
+                n = n.left;
+            } else {
+                n = n.right;
+            }
+        }
+        System.out.println("Element not found !!");
+    }
+
     public static void main(String[] args) {
         BST b = new BST();
         b.insert(5);
@@ -128,6 +149,8 @@ class BST {
         System.out.println("Max Element:");
         Node max = b.findMax(b.root);
         System.out.println(max.value);
+
+        b.search(b.root, 25);
 
     }
 }
