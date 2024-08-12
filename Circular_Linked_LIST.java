@@ -17,11 +17,11 @@ class CLL {
             first = n;
             n.next = first;
         } else {
-            n.next = first;
             node c = first;
             while (c.next != first) {
                 c = c.next;
             }
+            n.next = first;
             c.next = n;
             first = n;
         }
