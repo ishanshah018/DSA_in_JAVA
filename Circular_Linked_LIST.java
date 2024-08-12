@@ -42,7 +42,7 @@ class CLL {
         }
     }
 
-    void insertbefore(int data, int value) {
+    void insertbefore(int value, int data) {
         if (first == null) {
             System.out.println("List is Empty..");
         } else {
